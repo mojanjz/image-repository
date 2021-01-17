@@ -61,6 +61,16 @@ class PostsController < ApplicationController
     end
   end
 
+  def search 
+    if params[:search].blank?  
+      redirect_to(root_path, alert: "Empty field!") and return  
+    else 
+      @results = Post.search params[:search] 
+      # @parameter = params[:search].downcase  
+      # @results = Post.all.where("lower(title) LIKE :search", search: @parameter) 
+    end  
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_post

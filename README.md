@@ -1,24 +1,9 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This is an image repo for the Shopify internship challenge 2021. 
+I built this using Rails,PostgreSQL, Bootstrap, and Amazon S3. 
 
-Things you may want to cover:
+Functionality: 
+- you can upload a new post that will be added to the repo and stored on an S3 bucket. 
+- you can then search images by their title.
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
