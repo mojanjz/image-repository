@@ -3,5 +3,5 @@
     <% @results.each do |result| %>  
         <%= result.title %><br>  
         <%= result.body %><br>
-        <%= image_tag(result.photo, width: 200) if result.photo.attached? %>
+        <%= image_tag(result.photo, width: 300) if result.photo.attached? %>
     <% end %>

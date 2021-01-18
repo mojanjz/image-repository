@@ -7,7 +7,7 @@
 <p id="notice"><%= notice %></p>
 
 <h1>Posts</h1>
-
+<div class="container">
 <table>
   <thead>
     <tr>
@@ -22,7 +22,7 @@
       <tr class="add-padding">
         <td><%= post.title %></td>
         <td><%= post.body %></td>
-        <td><%= image_tag(post.photo, width: 200) if post.photo.attached? %></td>
+        <td><%= image_tag(post.photo, width: 300) if post.photo.attached? %></td>
         <td><%= link_to 'Show', post %></td>
         <td><%= link_to 'Edit', edit_post_path(post) %></td>
         <td><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %></td>
@@ -30,6 +30,7 @@
     <% end %>
   </tbody>
 </table>
+<div class="container">
 
 <br>
 
