@@ -10,3 +10,5 @@ Functionality:
 - you can then search images by their titile or body.
 - you can delete and update posts.
 
++ All photos currently on the website are taken by me.
++ I understand that it's very tempting to switch from Instagram to the Coolest Image Pool :P
