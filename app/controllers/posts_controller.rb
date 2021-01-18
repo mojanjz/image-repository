@@ -65,9 +65,8 @@ class PostsController < ApplicationController
     if params[:search].blank?  
       redirect_to(root_path, alert: "Empty field!") and return  
     else 
-      # @results = Post.search params[:search] 
       @parameter = params[:search].downcase  
-      @results = Post.all.where("lower(title) LIKE :search", search: @parameter) 
+      @results = Post.all.where("lower(title) LIKE :search OR lower(body) LIKE :search", search: @parameter) 
     end  
   end
 

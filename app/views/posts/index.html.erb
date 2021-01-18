@@ -1,3 +1,9 @@
+<style>
+  table, th, td {
+    padding: 10px;
+  }
+</style>
+
 <p id="notice"><%= notice %></p>
 
 <h1>Posts</h1>
@@ -13,7 +19,7 @@
 
   <tbody>
     <% @posts.each do |post| %>
-      <tr>
+      <tr class="add-padding">
         <td><%= post.title %></td>
         <td><%= post.body %></td>
         <td><%= image_tag(post.photo, width: 200) if post.photo.attached? %></td>
