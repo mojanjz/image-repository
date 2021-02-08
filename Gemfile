@@ -27,9 +27,12 @@ gem 'bootstrap-sass'
 
 gem 'aws-sdk-s3', require: false
 
-# Elasticsearch integration
-gem 'elasticsearch-model'
-gem 'elasticsearch-rails'
+# # Elasticsearch integration
+# gem 'elasticsearch-model'
+# gem 'elasticsearch-rails'
+
+# Authentication
+gem 'devise'
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.4', require: false
@@ -62,7 +65,7 @@ group :test do
   # Clean Database between tests
   gem 'database_cleaner'
   # Programmatically start and stop ES for tests
-  gem 'elasticsearch-extensions'
+  # gem 'elasticsearch-extensions'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem

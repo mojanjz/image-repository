@@ -1,5 +1,7 @@
 class PostsController < ApplicationController
   before_action :set_post, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!, only: [:edit, :update, :create, :destroy]
+  before_action :correct_user, only: [:edit, :update, :destroy]
 
   # GET /posts
   # GET /posts.json
@@ -25,6 +27,7 @@ class PostsController < ApplicationController
   # POST /posts.json
   def create
     @post = Post.new(post_params)
+    @post.user_id = current_user.id
 
     respond_to do |format|
       if @post.save
@@ -54,6 +57,7 @@ class PostsController < ApplicationController
   # DELETE /posts/1
   # DELETE /posts/1.json
   def destroy
+    authenticate_user!
     @post.destroy
     respond_to do |format|
       format.html { redirect_to posts_url, notice: 'Post was successfully destroyed.' }
@@ -68,6 +72,13 @@ class PostsController < ApplicationController
       @parameter = params[:search].downcase  
       @results = Post.all.where("lower(title) LIKE :search OR lower(body) LIKE :search", search: @parameter) 
     end  
+  end
+
+  def correct_user
+    @post = Post.find_by(id: params[:id])
+    unless current_user?(@post.user)
+      redirect_to user_path(current_user)
+    end
   end
 
   private

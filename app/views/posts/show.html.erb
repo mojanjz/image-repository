@@ -1,4 +1,4 @@
-<p id="notice"><%= notice %></p>
+
 
 <p>
   <strong>Title:</strong>
@@ -10,7 +10,7 @@
   <%= @post.body %>
 </p>
 
-<%= image_tag(@post.photo, width: 200) if @post.photo.attached? %>
+<%= image_tag(@post.photo, width: 400) if @post.photo.attached? %>
 
 <%= link_to 'Edit', edit_post_path(@post) %> |
 <%= link_to 'Back', posts_path %>
